@@ -8,7 +8,7 @@ export const products = [
     rating: 4.8,
     inStock: true,
     description: "Flagship smartphone with A16 Bionic chip.",
-    image: "https://via.placeholder.com/150",
+    image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-pro-max-model-unselect-gallery-1-202209?wid=5120&hei=2880&fmt=jpeg&qlt=80&.v=1661027781686",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const products = [
     rating: 4.7,
     inStock: true,
     description: "Powerful Android phone with 200MP camera.",
-    image: "https://via.placeholder.com/150",
+    image: "https://images.samsung.com/is/image/samsung/p6pim/vn/2401/gallery/vn-galaxy-s24-s928-sm-s928bztcxxv-thumb-539350075",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const products = [
     rating: 4.9,
     inStock: true,
     description: "Lightweight laptop with Apple Silicon chip.",
-    image: "https://via.placeholder.com/150",
+    image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-air-m2-gallery1-20220606?wid=4000&hei=3072&fmt=jpeg&qlt=90&.v=1654122880566",
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export const products = [
     rating: 4.6,
     inStock: false,
     description: "Premium Windows laptop with sleek design.",
-    image: "https://via.placeholder.com/150",
+    image: "https://i.dell.com/sites/imagecontent/products/PublishingImages/xps-13-9315-laptop/spi/ng/notebook-xps-13-9315-hero-504x350-ng.psd",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ export const products = [
     rating: 4.8,
     inStock: true,
     description: "Noise-cancelling wireless headphones.",
-    image: "https://via.placeholder.com/150",
+    image: "https://www.sony.com/image/b4ae6f5d7d315fe4f750730d6f764e3d?fmt=pjpeg&wid=330&bgcolor=FFFFFF&bgc=FFFFFF",
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ export const products = [
     rating: 4.7,
     inStock: true,
     description: "High-end tablet with M2 chip.",
-    image: "https://via.placeholder.com/150",
+    image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-12-11-select-202210?wid=470&hei=556&fmt=png-alpha&.v=1664577384284",
   },
   {
     id: 7,
@@ -74,7 +74,7 @@ export const products = [
     rating: 4.5,
     inStock: true,
     description: "Smart speaker with Alexa.",
-    image: "https://via.placeholder.com/150",
+    image: "https://m.media-amazon.com/images/I/61PS2r6bNLL._AC_SL1000_.jpg",
   },
   {
     id: 8,
@@ -85,7 +85,7 @@ export const products = [
     rating: 4.4,
     inStock: true,
     description: "Smart display with Google Assistant.",
-    image: "https://via.placeholder.com/150",
+    image: "https://lh3.googleusercontent.com/UJoHqbAf6Ax6fwMOz6WzDkPoZ1zWcZrGaWtkdGRoZ9R5r2Te-jAK-y5RB3GEKwUpQJIR2zypzCMs4BOPyDE4zDPkFWWC24WYxw",
   },
   {
     id: 9,
@@ -96,7 +96,7 @@ export const products = [
     rating: 4.6,
     inStock: false,
     description: "4K Smart QLED television.",
-    image: "https://via.placeholder.com/150",
+    image: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-qled-q60b-qn55q60bauxzn-530451911",
   },
   {
     id: 10,
@@ -107,7 +107,7 @@ export const products = [
     rating: 4.5,
     inStock: true,
     description: "Gaming laptop with RTX 4060.",
-    image: "https://via.placeholder.com/150",
+    image: "https://dlcdnwebimgs.asus.com/files/media/7DAF1F63-E395-4E80-8D7E-9A49FE12D8C9/v1/img/kv.jpg",
   },
   {
     id: 11,
@@ -118,7 +118,7 @@ export const products = [
     rating: 4.6,
     inStock: true,
     description: "Latest Apple smartwatch with new features.",
-    image: "https://via.placeholder.com/150",
+    image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/watch-card-40-series9-202309?wid=600&hei=500&fmt=jpeg&qlt=90&.v=1693500484865",
   },
   {
     id: 12,
@@ -129,7 +129,7 @@ export const products = [
     rating: 4.3,
     inStock: true,
     description: "Fitness-focused smartwatch with great battery.",
-    image: "https://via.placeholder.com/150",
+    image: "https://static.fitbit.com/simple.b-cssdisabled-png.h62acbf35e20b857c8cc72f77cfd90a25.pack?items=%2Fcontent%2Fdam%2Ffitbit%2Fglobal%2Fmarketing-assets%2Fdevices%2Fversa%2Fversa-4%2Fproduct%2Fdevice-3qtr-charcoal-graphite-aluminum.png",
   },
   {
     id: 13,
@@ -140,7 +140,7 @@ export const products = [
     rating: 4.9,
     inStock: true,
     description: "Best productivity mouse on the market.",
-    image: "https://via.placeholder.com/150",
+    image: "https://resource.logitech.com/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-gallery-1-us.png",
   },
   {
     id: 14,
@@ -151,7 +151,7 @@ export const products = [
     rating: 4.7,
     inStock: false,
     description: "Full-frame mirrorless camera.",
-    image: "https://via.placeholder.com/150",
+    image: "https://www.canon-europe.com/media/eos-r8-front_tcm13-2205423.jpg",
   },
   {
     id: 15,
@@ -162,7 +162,7 @@ export const products = [
     rating: 4.6,
     inStock: true,
     description: "Rugged action camera for adventure.",
-    image: "https://via.placeholder.com/150",
+    image: "https://gopro.com/content/dam/gopro/en/en/hero12-black/hero12-black-gallery-1.png",
   },
   {
     id: 16,
@@ -173,7 +173,7 @@ export const products = [
     rating: 4.8,
     inStock: true,
     description: "High-capacity portable power bank.",
-    image: "https://via.placeholder.com/150",
+    image: "https://www.anker.com/_nuxt/img/powercore-20000.9beff6e.jpg",
   },
   {
     id: 17,
@@ -184,7 +184,7 @@ export const products = [
     rating: 4.5,
     inStock: true,
     description: "144Hz gaming monitor with IPS panel.",
-    image: "https://via.placeholder.com/150",
+    image: "https://www.lg.com/us/images/monitors/md07503238/gallery/desktop-01.jpg",
   },
   {
     id: 18,
@@ -195,7 +195,7 @@ export const products = [
     rating: 4.4,
     inStock: true,
     description: "Affordable Android tablet with strong specs.",
-    image: "https://via.placeholder.com/150",
+    image: "https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-pad-6/section04-pad.jpg",
   },
   {
     id: 19,
@@ -206,7 +206,7 @@ export const products = [
     rating: 4.5,
     inStock: false,
     description: "Sleek productivity laptop with Windows 11.",
-    image: "https://via.placeholder.com/150",
+    image: "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Surface-Laptop-5-Colors-2880:VP5-1920x1080",
   },
   {
     id: 20,
@@ -217,6 +217,6 @@ export const products = [
     rating: 4.6,
     inStock: true,
     description: "Gaming headset with THX Spatial Audio.",
-    image: "https://via.placeholder.com/150",
+    image: "https://assets2.razerzone.com/images/pnx.assets/78c4ab161c084274b54a9c5e4b18fb3d/razer-blackshark-v2-gallery-1.png",
   },
 ];
