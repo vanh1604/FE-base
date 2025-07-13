@@ -1,14 +1,19 @@
-import { products } from "../data";
-import { Header } from "./components/Header";
-import Main from "./components/Main";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LayoutApp from "./components/layout/LayoutApp";
 
+import "./App.css";
+import Home from "./pages/Home";
+import Collection from "./pages/Collection";
 function App() {
-  console.log(products);
-
   return (
-    <>
-      <Main />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LayoutApp />}>
+          <Route index element={<Home />} />
+          <Route path="collection" element={<Collection />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
