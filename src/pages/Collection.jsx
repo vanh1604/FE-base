@@ -3,12 +3,20 @@ import { products } from '../data/data'
 
 const Collection = () => {
   const [searchTerm, setSearchTerm] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('All')
+const categories = ["All", ...new Set(products.map((item) => item.category))]
+ const handleCategoryChange = (category) => {
+    setSelectedCategory(category)
+  }
 
+  
 
   const filteredProducts = products.filter((item) => {
+    const matchesCategory = selectedCategory === "All" ? true : item.category === selectedCategory
     const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase())
-    return matchesSearch 
+    return matchesCategory && matchesSearch
   })
+
 
   return (
     <div className="px-6 py-8">
@@ -32,12 +40,21 @@ const Collection = () => {
       <div className="mb-6">
         <h2 className="font-semibold text-lg mb-3">Categories</h2>
         <div className="space-y-2">
-          {['SmartPhone', 'Laptop', 'SAMSUNG', 'APPLE','LOGITECH'].map((cat) => (
-            <div key={cat} className="flex items-center gap-2">
-              <input type="checkbox" id={cat} className="accent-pink-500" />
-              <label htmlFor={cat} className="text-sm text-gray-700">{cat}</label>
-            </div>
-          ))}
+         {categories.map((cat) => (
+  <div key={cat} className="flex items-center gap-2">
+    <input
+      type="radio"
+      id={cat}
+      name="category"
+      className="accent-pink-500"
+      checked={selectedCategory === cat}
+      onChange={() => handleCategoryChange(cat)}
+    />
+    <label htmlFor={cat} className="text-sm text-gray-700 capitalize">
+      {cat === "all" ? "All" : cat}
+    </label>
+  </div>
+))}
         </div>
       </div>
 
