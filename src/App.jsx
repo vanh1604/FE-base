@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LayoutApp from './components/layout/LayoutApp';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LayoutApp from "./components/layout/LayoutApp";
 
-import './App.css'; 
-import Home from './pages/Home';
-import Collection from './pages/Collection';
+import "./App.css";
+import Home from "./pages/Home";
+import Collection from "./pages/Collection";
 function App() {
   return (
     <BrowserRouter>
