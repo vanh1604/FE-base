@@ -41,7 +41,10 @@ export default function Header() {
 
       <div className="flex items-center space-x-4">
         <SearchOutlined className="text-xl text-gray-700 cursor-pointer hover:text-blue-600" />
-        <UserOutlined className="text-xl text-gray-700 cursor-pointer hover:text-blue-600" />
+
+        <Link to="/login">
+          <UserOutlined className="text-xl text-gray-700 cursor-pointer hover:text-blue-600" />
+        </Link>
         <ShoppingCartOutlined className="text-xl text-gray-700 cursor-pointer hover:text-blue-600" />
       </div>
     </header>
