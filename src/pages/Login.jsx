@@ -4,8 +4,8 @@ import { AppleOutlined, FacebookFilled, GoogleOutlined } from "@ant-design/icons
 import ecommerc from "../assets/logo/ecommerc-logo.png"; // Adjust the path as necessary
 const Login = () => {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-800 to-teal-700 px-4">
-            <div className="bg-blue-400 rounded-2xl shadow-lg p-8 ">
+        <div className="min-h-screen flex items-center justify-center px-4">
+            <div className="bg-blue-400 rounded-2xl border shadow-lg p-8">
                 <div className="flex justify-center mb-4">
                     <img src={ecommerc} alt="Shopify" className="h-8" />
                 </div>
