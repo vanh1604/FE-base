@@ -5,7 +5,7 @@ import ecommerc from "../assets/logo/ecommerc-logo.png"; // Adjust the path as n
 const Login = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-800 to-teal-700 px-4">
-            <div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full">
+            <div className="bg-blue-400 rounded-2xl shadow-lg p-8 ">
                 <div className="flex justify-center mb-4">
                     <img src={ecommerc} alt="Shopify" className="h-8" />
                 </div>
