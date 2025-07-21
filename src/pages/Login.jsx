@@ -1,76 +1,70 @@
 import React from "react";
-import { Button, Input } from "antd";
-import { AppleOutlined, FacebookFilled, GoogleOutlined } from "@ant-design/icons";
-import ecommerc from "../assets/logo/ecommerc-logo.png"; // Adjust the path as necessary
+import { Button, Checkbox, Form, Input } from "antd";
+import Link from "antd/es/typography/Link";
+
 const Login = () => {
+    const onFinish = (values) => {
+        console.log("Success:", values);
+    };
+
+    const onFinishFailed = (errorInfo) => {
+        console.log("Failed:", errorInfo);
+    };
+
     return (
-        <div className="min-h-screen flex items-center justify-center px-4">
-            <div className="bg-blue-400 rounded-2xl border shadow-lg p-8">
-                <div className="flex justify-center mb-4">
-                    <img src={ecommerc} alt="Shopify" className="h-8" />
-                </div>
-                <h2 className="text-2xl font-semibold text-center mb-2">Log in</h2>
-                <p className="text-center text-gray-500 mb-6">Continue to Shopify</p>
+        <div className="flex justify-center items-center min-h-screen bg-white">
+            <div className="w-full max-w-md px-6 py-10">
+                {/* TIÊU ĐỀ LOGIN */}
+                <h2 className="text-4xl font-serif font-bold text-center mb-10 flex items-center justify-center gap-2">
+                    <span>Login</span>
+                    <span className="text-3xl">—</span>
+                </h2>
 
-                <form className="space-y-4">
-                    <Input
-                        type="email"
-                        placeholder="Email"
-                        size="large"
-                        className="w-full"
-                    />
-                    <Input
-                        type="password"
-                        placeholder="Password"
-                        size="large"
-                        className="w-full"
-                        autoComplete="current-password"
-                        autoFocus
-                    />
-                    <Button
-                        type="primary"
-                        htmlType="submit"
-                        className="w-full bg-black hover:bg-gray-800"
-                        size="large"
+                {/* FORM ĐĂNG NHẬP */}
+                <Form
+                    name="loginForm"
+                    layout="vertical"
+                    initialValues={{ remember: true }}
+                    onFinish={onFinish}
+                    onFinishFailed={onFinishFailed}
+                    autoComplete="off"
+                >
+                    {/* USERNAME */}
+                    <Form.Item
+                        label="Username"
+                        name="username"
+                        rules={[{ required: true, message: "Please input your username!" }]}
                     >
-                        Continue with email
-                    </Button>
-                </form>
+                        <Input />
+                    </Form.Item>
 
-                <div className="text-center mt-4 text-gray-500 text-sm">
-                    <span>🔐 Sign in with passkey</span>
-                </div>
+                    {/* PASSWORD */}
+                    <Form.Item
+                        label="Password"
+                        name="password"
+                        rules={[{ required: true, message: "Please input your password!" }]}
+                    >
+                        <Input.Password />
+                    </Form.Item>
 
-                <div className="flex items-center justify-center my-4">
-                    <hr className="w-1/3 border-gray-300" />
-                    <span className="mx-3 text-gray-500">or</span>
-                    <hr className="w-1/3 border-gray-300" />
-                </div>
+                    {/* LINKS */}
+                    <div className="flex justify-between text-sm text-black mb-4">
+                        <Link href="#" className="hover:underline">Forgot Password ?</Link>
+                        <Link href="#" className="hover:underline">Create Account ?</Link>
+                    </div>
 
-                <div className="flex justify-between gap-2">
-                    <Button icon={<AppleOutlined />} block size="large">
-                        Apple
-                    </Button>
-                    <Button icon={<FacebookFilled />} block size="large">
-                        Facebook
-                    </Button>
-                    <Button icon={<GoogleOutlined />} block size="large">
-                        Google
-                    </Button>
-                </div>
+                    {/* REMEMBER */}
+                    <Form.Item name="remember" valuePropName="checked">
+                        <Checkbox>Remember me</Checkbox>
+                    </Form.Item>
 
-                <div className="text-center text-sm mt-6 text-gray-600">
-                    New to Shopify?{" "}
-                    <a href="#" className="text-blue-600 font-medium hover:underline">
-                        Get started →
-                    </a>
-                </div>
-
-                <div className="flex justify-center gap-4 mt-4 text-xs text-gray-400">
-                    <a href="">Help</a>
-                    <a href="">Privacy</a>
-                    <a href="">Terms</a>
-                </div>
+                    {/* SUBMIT */}
+                    <Form.Item>
+                        <Button htmlType="submit" className="w-full bg-black hover:bg-blue-300 text-white">
+                            Sign Up
+                        </Button>
+                    </Form.Item>
+                </Form>
             </div>
         </div>
     );
