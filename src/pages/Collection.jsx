@@ -1,15 +1,20 @@
-import React, { useState } from "react";
-import { products } from "../data/data";
+import React, { useState, useEffect } from "react";
+import ProductItem from "../components/ProductItem";
 
 const Collection = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [products, setProducts] = useState([]);
 
-  const filteredProducts = products.filter((item) => {
-    const matchesSearch = item.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
-    return matchesSearch;
-  });
+  // Fetch dữ liệu từ API khi component mount
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, []);
+
+  const filteredProducts = products.filter((item) =>
+    item.title?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="px-6 py-8">
@@ -68,18 +73,7 @@ const Collection = () => {
         <main className="md:w-3/4 w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredProducts.map((item) => (
-              <div
-                key={item.id}
-                className="border p-2 rounded-lg shadow-sm hover:shadow-md transition"
-              >
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-48 object-cover mb-4 rounded"
-                />
-                <h3 className="text-lg font-semibold">{item.name}</h3>
-                <p className="text-gray-600">${item.price}</p>
-              </div>
+              <ProductItem key={item.id} item={item} />
             ))}
           </div>
         </main>

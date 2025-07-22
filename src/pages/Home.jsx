@@ -1,10 +1,25 @@
-import React, { use } from "react";
+import React, { useState, useEffect } from "react";
 import { Image } from "antd";
 import FashionBanner from "../components/FashionBanner";
 import { products } from "../data/data";
 import BestSeller from "../components/BestSeller";
 import Service from "../components/Service";
+import ProductItem from "../components/ProductItem";
 const Home = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [products, setProducts] = useState([]);
+
+  // Fetch dữ liệu từ API khi component mount
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, []);
+
+  const filteredProducts = products.filter((item) =>
+    item.title?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-7xl mx-auto px-5 py-8">
@@ -27,18 +42,8 @@ const Home = () => {
       </p>
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-18">
-          {products.map((item) => (
-            <div key={item.id} className="flex flex-col items-center mb-8">
-              <img
-                width={200}
-                height={200}
-                src={item.image}
-                alt={item.name}
-                className="rounded-lg shadow-lg"
-              />
-              <h3 className="text-lg font-semibold mt-2">{item.name}</h3>
-              <p className="text-gray-600">${item.price}</p>
-            </div>
+          {filteredProducts.map((item) => (
+            <ProductItem key={item.id} item={item} />
           ))}
         </div>
         <div>

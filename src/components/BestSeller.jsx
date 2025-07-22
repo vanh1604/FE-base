@@ -1,6 +1,15 @@
-import React from "react";
-import { products } from "../data/data";
+import React, { useEffect, useState } from "react";
+import ProductItem from "./ProductItem";
+
 const BestSeller = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, []);
+
   return (
     <div>
       <div className="flex items-center justify-center my-8">
@@ -18,18 +27,10 @@ const BestSeller = () => {
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products
-          .filter((item) => item.rating >= 4.5 && item.inStock)
+          .filter((item) => item.rating && item.rating.rate >= 4.5)
           .slice(0, 4)
           .map((item) => (
-            <div key={item.id} className="border p-4 rounded-lg">
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-48 object-cover mb-4 rounded"
-              />
-              <h3 className="text-lg font-semibold">{item.name}</h3>
-              <p className="text-gray-600">${item.price}</p>
-            </div>
+            <ProductItem key={item.id} item={item} />
           ))}
       </div>
     </div>
