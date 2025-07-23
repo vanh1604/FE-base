@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { Image } from "antd";
 import FashionBanner from "../components/FashionBanner";
-import { products } from "../data/data";
 import BestSeller from "../components/BestSeller";
 import Service from "../components/Service";
-import ProductItem from "../components/ProductItem";
+import axios from "axios";
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
 
   // Fetch dữ liệu từ API khi component mount
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => setProducts(data));
+    axios
+      .get("https://687ecf16efe65e520087a4c2.mockapi.io/product")
+      .then((response) => {
+        console.log("Fetched data:", response.data);
+        setProducts(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+      });
   }, []);
 
   const filteredProducts = products.filter((item) =>
@@ -42,8 +46,33 @@ const Home = () => {
       </p>
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-18">
-          {filteredProducts.map((item) => (
-            <ProductItem key={item.id} item={item} />
+          {filteredProducts.slice(0, 10).map((item) => (
+            <div
+              key={item.id}
+              className="border p-2 rounded-lg shadow-sm hover:shadow-md transition flex flex-col items-center bg-white"
+              style={{ minHeight: 340, maxWidth: 250 }}
+            >
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-48 object-cover mb-4 rounded"
+                style={{ maxWidth: 200, minHeight: 192, objectFit: "cover" }}
+              />
+              <h3
+                className="text-lg font-semibold text-center mb-2"
+                style={{
+                  display: "-webkit-box",
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                  minHeight: "3em",
+                  maxHeight: "3em",
+                }}
+              >
+                {item.title}
+              </h3>
+              <p className="text-gray-600">${item.price}</p>
+            </div>
           ))}
         </div>
         <div>

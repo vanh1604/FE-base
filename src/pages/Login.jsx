@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Checkbox, Form, Input } from "antd";
-import Link from "antd/es/typography/Link";
+import { Link } from "react-router-dom"
+
 
 const Login = () => {
     const onFinish = (values) => {
@@ -50,7 +51,7 @@ const Login = () => {
                     {/* LINKS */}
                     <div className="flex justify-between text-sm text-black mb-4">
                         <Link href="#" className="hover:underline">Forgot Password ?</Link>
-                        <Link href="#" className="hover:underline">Create Account ?</Link>
+                        <Link to='/signup' className="hover:underline">Create Account ?</Link>
                     </div>
 
                     {/* REMEMBER */}
@@ -61,7 +62,7 @@ const Login = () => {
                     {/* SUBMIT */}
                     <Form.Item>
                         <Button htmlType="submit" className="w-full bg-black hover:bg-blue-300 text-white">
-                            Sign Up
+                            Login
                         </Button>
                     </Form.Item>
                 </Form>

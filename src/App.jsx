@@ -6,6 +6,7 @@ import Collection from "./pages/Collection";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Contact from "./pages/Contact";
+import Signup from "./pages/SignUp";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
 
         <Route path="/" element={<LayoutApp />}>
           <Route path='login' element={<Login />} />
+          <Route path="signup" element={<Signup />} />
           <Route index element={<Home />} />
           <Route path="collection" element={<Collection />} />
           <Route path="about" element={<About />} />

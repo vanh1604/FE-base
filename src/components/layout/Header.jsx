@@ -10,11 +10,10 @@ export default function Header() {
 
   const handleButtonClick = e => {
     message.info('Click on left button.');
-    console.log('click left button', e);
+
   };
   const handleMenuClick = e => {
-    message.info('Click on menu item.');
-    console.log('click', e);
+    localStorage.removeItem('user');
     if (e.key === '3') {
       navigate('/login');
     }
@@ -71,6 +70,7 @@ export default function Header() {
             </Link>
           </li>
         </ul>
+
       </nav>
 
       <div className="flex items-center space-x-4">
