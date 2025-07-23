@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
+import axios from "axios";
 
 const BestSeller = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => setProducts(data));
+    axios
+      .get("https://687ecf16efe65e520087a4c2.mockapi.io/product")
+      .then((res) => {
+        const updatedProducts = res.data.map((item) => ({
+          ...item,
+          rating: item.rating || { rate: Math.random() * 5 },
+        }));
+        console.log("Fetched and updated data:", updatedProducts);
+        setProducts(updatedProducts);
+      })
+      .catch((err) => console.error("Error fetching data:", err));
   }, []);
 
   return (

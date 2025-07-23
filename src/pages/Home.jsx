@@ -9,15 +9,17 @@ const Home = () => {
 
   // Fetch dữ liệu từ API khi component mount
   useEffect(() => {
-    axios
-      .get("https://687ecf16efe65e520087a4c2.mockapi.io/product")
-      .then((response) => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("https://687ecf16efe65e520087a4c2.mockapi.io/product");
         console.log("Fetched data:", response.data);
         setProducts(response.data);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching products:", error);
-      });
+      }
+    };
+
+    fetchProducts();
   }, []);
 
   const filteredProducts = products.filter((item) =>

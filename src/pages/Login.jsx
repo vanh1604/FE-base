@@ -1,11 +1,17 @@
 import React from "react";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Checkbox, Form, Input, message } from "antd";
 import { Link } from "react-router-dom"
 
 
 const Login = () => {
     const onFinish = (values) => {
-        console.log("Success:", values);
+        if (values.username && values.password) {
+            message.success("Login successful!");
+            localStorage.setItem('user', JSON.stringify(values));
+        }
+        else {
+            message.error("Please fill in all fields.");
+        }
     };
 
     const onFinishFailed = (errorInfo) => {

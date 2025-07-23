@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductItem from "../components/ProductItem";
 import axios from "axios";
+import { Input } from "antd";
 const Collection = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
@@ -42,18 +43,21 @@ const Collection = () => {
 
   return (
     <div className="px-6 py-8">
-      <div className="text-2xl font-bold text-center mb-8">ALL COLLECTION</div>
-
-      <div className="text-center mb-4">
-        <input
-          type="text"
-          placeholder="Search products..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="border border-gray-300 rounded-lg px-4 py-2 mb-8 w-full max-w-md mx-auto"
-        />
+      <div className="flex flex-col items-center justify-center my-8">
+        <h2 className="text-4xl font-serif font-bold text-center mb-10 flex items-center justify-center gap-2">
+          <span>COLLECTION</span>
+          <span className="text-3xl">—</span>
+        </h2>
+        <div className="text-center mb-4">
+          <Input
+            type="text"
+            placeholder="Search products..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="border border-gray-300 rounded-lg px-4 py-2 mb-8 w-full max-w-md mx-auto"
+          />
+        </div>
       </div>
-
       <div className="flex flex-col md:flex-row gap-8">
         {/* FILTER COLUMN */}
         <aside className="md:w-1/4 w-full border rounded-lg p-5 shadow-md bg-white sticky top-20 h-fit">
@@ -62,7 +66,7 @@ const Collection = () => {
             <div className="space-y-2">
               {uniqueCategories.map((cat) => (
                 <div key={cat} className="flex items-center gap-2">
-                  <input
+                  <Input
                     type="checkbox"
                     id={cat}
                     value={cat}
@@ -78,7 +82,6 @@ const Collection = () => {
             </div>
           </div>
 
-          {/* Price (chưa xử lý lọc, chỉ UI) */}
           <div className="mb-6">
             <h2 className="font-semibold text-lg mb-3">Price</h2>
             <div className="flex items-center gap-2">
