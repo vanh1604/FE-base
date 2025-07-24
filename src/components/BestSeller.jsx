@@ -6,17 +6,22 @@ const BestSeller = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://687ecf16efe65e520087a4c2.mockapi.io/product")
-      .then((res) => {
-        const updatedProducts = res.data.map((item) => ({
-          ...item,
-          rating: item.rating || { rate: Math.random() * 5 },
-        }));
-        console.log("Fetched and updated data:", updatedProducts);
-        setProducts(updatedProducts);
-      })
-      .catch((err) => console.error("Error fetching data:", err));
+    const fetchProducts = async () => {
+      try {
+        const respone = await axios.get("https://687ecf16efe65e520087a4c2.mockapi.io/product")
+          .then((res) => {
+            const updatedProducts = res.data.map((item) => ({
+              ...item,
+              rating: item.rating || { rate: Math.random() * 5 },
+            }));
+            console.log("Fetched and updated data:", updatedProducts);
+            setProducts(updatedProducts);
+          })
+      } catch (err) {
+        console.error("Error fetching products:", err);
+      }
+    }
+    fetchProducts();
   }, []);
 
   return (

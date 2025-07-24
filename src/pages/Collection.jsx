@@ -1,24 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import ProductItem from "../components/ProductItem";
 import axios from "axios";
-import { Input } from "antd";
+import { Checkbox, Input } from "antd";
 const Collection = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://687ecf16efe65e520087a4c2.mockapi.io/product")
-      .then((res) => {
-        console.log("Fetched data:", res.data);
-        setProducts(res.data);
-      })
-      .catch((err) => console.error("Error fetching data:", err));
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("https://687ecf16efe65e520087a4c2.mockapi.io/product")
+        console.log("Fetched data:", response.data);
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+    fetchProducts();
   }, []);
 
-  const handleCategoryChange = (e) => {
-    const { value, checked } = e.target;
+
+  const handleCategoryChange = ({ value, checked }) => {
     if (checked) {
       setSelectedCategories((prev) => [...prev, value]);
     } else {
@@ -26,21 +29,20 @@ const Collection = () => {
     }
   };
 
-
   const uniqueCategories = [...new Set(products.map((p) => p.category))];
 
+  const filteredProducts = useMemo(() => {
+    return products.filter((item) => {
+      const matchSearch =
+        typeof item.title === "string" &&
+        item.title.toLowerCase().includes(searchTerm.toLowerCase());
 
-  const filteredProducts = products.filter((item) => {
-    const matchSearch =
-      typeof item.title === "string" &&
-      item.title.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchCategory =
+        selectedCategories.length === 0 || selectedCategories.includes(item.category);
 
-    const matchCategory =
-      selectedCategories.length === 0 || selectedCategories.includes(item.category);
-
-    return matchSearch && matchCategory;
-  });
-
+      return matchSearch && matchCategory;
+    });
+  }, [products, searchTerm, selectedCategories]);
   return (
     <div className="px-6 py-8">
       <div className="flex flex-col items-center justify-center my-8">
@@ -66,17 +68,12 @@ const Collection = () => {
             <div className="space-y-2">
               {uniqueCategories.map((cat) => (
                 <div key={cat} className="flex items-center gap-2">
-                  <Input
-                    type="checkbox"
-                    id={cat}
-                    value={cat}
+                  <Checkbox
                     checked={selectedCategories.includes(cat)}
-                    onChange={handleCategoryChange}
-                    className="accent-pink-500"
-                  />
-                  <label htmlFor={cat} className="text-sm text-gray-700">
-                    {cat}
-                  </label>
+                    onChange={(e) => handleCategoryChange({ value: cat, checked: e.target.checked })}
+                  >
+                    <span className="text-sm text-gray-700">{cat}</span>
+                  </Checkbox>
                 </div>
               ))}
             </div>
