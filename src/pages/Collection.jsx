@@ -6,7 +6,11 @@ import { Checkbox, Input } from "antd";
 const Collection = () => {
   const [products, setProducts] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [sortOption, setSortOption] = useState("relevance");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
 
+  // Fetch data
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -21,6 +25,7 @@ const Collection = () => {
     fetchProducts();
   }, []);
 
+  // Handle category change
   const handleCategoryChange = ({ value, checked }) => {
     if (checked) {
       setSelectedCategories((prev) => [...prev, value]);
@@ -29,21 +34,39 @@ const Collection = () => {
     }
   };
 
+  // Unique categories
   const uniqueCategories = [...new Set(products.map((p) => p.category))];
 
+  // Filter and sort
   const filteredProducts = useMemo(() => {
-    return products.filter((item) => {
-      const matchCategory =
-        selectedCategories.length === 0 ||
-        selectedCategories.includes(item.category);
+    let result = [...products];
 
-      return matchCategory;
-    });
-  }, [products, selectedCategories]);
+    // Filter by category
+    if (selectedCategories.length > 0) {
+      result = result.filter((item) =>
+        selectedCategories.includes(item.category)
+      );
+    }
+
+
+    if (minPrice !== "") {
+      result = result.filter((item) => item.price >= parseFloat(minPrice));
+    }
+    if (maxPrice !== "") {
+      result = result.filter((item) => item.price <= parseFloat(maxPrice));
+    }
+
+    if (sortOption === "priceLow") {
+      result.sort((a, b) => a.price - b.price);
+    } else if (sortOption === "priceHigh") {
+      result.sort((a, b) => b.price - a.price);
+    }
+
+    return result;
+  }, [products, selectedCategories, minPrice, maxPrice, sortOption]);
 
   return (
     <div className="px-6 py-8">
-
       <div className="flex flex-col md:flex-row items-center justify-between my-8">
         <h2 className="text-3xl md:text-4xl font-light text-gray-600 mb-4 md:mb-0">
           ALL
@@ -51,19 +74,21 @@ const Collection = () => {
           <span className="inline-block w-16 h-[2px] bg-gray-700 ml-3 align-middle"></span>
         </h2>
 
-        {/* Sort Dropdown */}
-        <select className="border px-3 py-1 rounded text-sm">
+
+        <select
+          className="border px-3 py-1 rounded text-sm"
+          value={sortOption}
+          onChange={(e) => setSortOption(e.target.value)}
+        >
           <option value="relevance">Sort by: Relevance</option>
           <option value="priceLow">Price: Low to High</option>
           <option value="priceHigh">Price: High to Low</option>
         </select>
       </div>
 
-
       <div className="flex flex-col md:flex-row gap-8">
 
         <aside className="md:w-1/4 w-full border rounded-lg p-5 shadow-sm bg-white sticky top-20 h-fit">
-
           <div className="mb-6">
             <h2 className="font-semibold text-lg mb-3">CATEGORIES</h2>
             <div className="space-y-2">
@@ -92,18 +117,21 @@ const Collection = () => {
                 type="number"
                 placeholder="Min"
                 className="w-full border rounded px-2 py-1 text-sm"
-                disabled
+                value={minPrice}
+                onChange={(e) => setMinPrice(e.target.value)}
               />
               <span>-</span>
               <Input
                 type="number"
                 placeholder="Max"
                 className="w-full border rounded px-2 py-1 text-sm"
-                disabled
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(e.target.value)}
               />
             </div>
           </div>
         </aside>
+
 
         <main className="md:w-3/4 w-full">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-6">

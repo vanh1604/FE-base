@@ -45,7 +45,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white text-black px-10 py-4 shadow-sm border-b border-gray-200 flex justify-between items-center sticky top-0 z-50">
+    <header className="bg-white text-black px-10 py-4 shadow-sm flex justify-between items-center sticky top-0 z-50">
       {/* Logo */}
       <div className="text-3xl font-extrabold tracking-widest text-gray-900">
         <Link to="/" className="flex items-center gap-1">
