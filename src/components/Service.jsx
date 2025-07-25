@@ -1,4 +1,4 @@
-import { Button, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import React from "react";
 import {
   CheckCircleIcon,
@@ -46,19 +46,19 @@ const Service = () => {
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>
-          <form className="flex max-w-2xl mx-auto">
+          <Form className="flex! max-w-md! mx-auto! justify-center! items-center!">
             <Input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-6 py-4 border border-gray-200 rounded-l-md focus:outline-none text-lg"
+              className="px-2! py-2! border border-gray-300! rounded-l-md! focus:outline-none! text-lg!"
             />
             <Button
               type="submit"
-              className="bg-black! text-white! px-6! py-4! rounded-r-md! hover:bg-gray-800! transition duration-300!"
+              className="bg-black! text-white! px-6! py-5! rounded-r-md! hover:bg-gray-800! transition duration-300!"
             >
               SUBSCRIBE
             </Button>
-          </form>
+          </Form>
         </div>
       </div>
     </div>

@@ -37,7 +37,7 @@ const Home = () => {
         <h2 className="text-3xl md:text-4xl font-light text-gray-500 text-center">
           LATEST
           <span className="font-bold text-gray-700 ml-1">COLLECTION</span>
-          <span className="flex-1 border-t border-gray-400 ml-4 max-w-[100px]"></span>
+          <span className="inline-block w-16 h-[2px] bg-gray-700 ml-3 align-middle"></span>
         </h2>
         <span className="hidden sm:block flex-1 border-t border-gray-400 ml-4"></span>
       </div>

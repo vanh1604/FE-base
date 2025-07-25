@@ -34,6 +34,7 @@ const About = () => {
     <div className="py-8 px-4">
       <div className="mt-8 text-center text-4xl font-semibold tracking-wide text-gray-800">
         ABOUT US
+        <span className="inline-block w-16 h-[2px] bg-gray-700 ml-3 align-middle"></span>
       </div>
       <div className="flex flex-col lg:flex-row items-center justify-center my-8 gap-6">
         <div className="w-full lg:w-1/2">
