@@ -1,3 +1,4 @@
+import { Button, Image } from "antd";
 import React from "react";
 
 const FashionBanner = () => {
@@ -13,13 +14,13 @@ const FashionBanner = () => {
           <h1 className="text-6xl font-serif font-semibold leading-tight mb-6">
             Latest Arrivals
           </h1>
-          <button className="mt-4 px-8 py-4 bg-black text-white rounded-full font-bold text-lg shadow hover:bg-gray-800 transition">
+          <Button className="mt-4 px-8 py-4 bg-black text-white rounded-full font-bold text-lg shadow hover:bg-gray-800 transition">
             SHOP NOW
-          </button>
+          </Button>
         </div>
         {/* Right: Image */}
         <div className="flex-1 bg-pink-100 flex items-center justify-center">
-          <img
+          <Image
             src="https://forever-frontend-pink.vercel.app/assets/hero_img-DOCOb6wn.png"
             alt="Fashion Model"
             className="object-contain h-full w-full max-w-[600px]"

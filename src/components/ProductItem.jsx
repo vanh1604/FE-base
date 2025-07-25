@@ -1,4 +1,4 @@
-import { Image } from "antd";
+import { Button, Image } from "antd";
 import React from "react";
 const ProductItem = ({ item }) => {
     if (!item) return null;
@@ -28,12 +28,12 @@ const ProductItem = ({ item }) => {
                 {item.title}
             </h3>
             <p className="text-gray-600">${item.price}</p>
-            <button
+            <Button
                 className="w-full bg-black text-white py-1 rounded mt-2 hover:bg-gray-800 transition-colors"
                 style={{ marginTop: "auto" }}
             >
                 Add to cart
-            </button>
+            </Button>
         </div>
     );
 };

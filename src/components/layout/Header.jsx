@@ -1,88 +1,89 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
-  UserOutlined,
   ShoppingCartOutlined,
   SearchOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
-import { Dropdown, message } from "antd";
+import { Badge, Dropdown, message } from "antd";
+
 export default function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleButtonClick = e => {
-    message.info('Click on left button.');
-
-  };
-  const handleMenuClick = e => {
-    localStorage.removeItem('user');
-    if (e.key === '3') {
-      navigate('/login');
+  const handleMenuClick = (e) => {
+    if (e.key === "3") {
+      localStorage.removeItem("user");
+      navigate("/login");
+      message.success("Đăng xuất thành công");
     }
   };
 
   const items = [
     {
-      label: 'Thông tin cá nhân',
-      key: '1',
+      label: "Thông tin cá nhân",
+      key: "1",
       icon: <UserOutlined />,
     },
     {
-      label: 'Đơn hàng của tôi',
-      key: '2',
+      label: "Đơn hàng của tôi",
+      key: "2",
       icon: <UserOutlined />,
     },
     {
-      label: 'Đăng xuất',
-      key: '3',
+      label: "Đăng xuất",
+      key: "3",
       icon: <UserOutlined />,
       danger: true,
-      Link: '/login',
     },
-  ]
+  ];
+
+  const navItems = [
+    { label: "HOME", path: "/" },
+    { label: "COLLECTION", path: "/collection" },
+    { label: "ABOUT", path: "/about" },
+    { label: "CONTACT", path: "/contact" },
+  ];
+
   return (
-    <header className="bg-white text-black flex border-b-2 border-gray-200 p-4 sticky top-0 shadow-md z-50 justify-between items-center">
-      <div className="text-2xl font-bold text-blue-600">
-        <Link to="/">FOREVER.</Link>
+    <header className="bg-white text-black px-10 py-4 shadow-sm border-b border-gray-200 flex justify-between items-center sticky top-0 z-50">
+      {/* Logo */}
+      <div className="text-3xl font-extrabold tracking-widest text-gray-900">
+        <Link to="/" className="flex items-center gap-1">
+          FOR<span className="text-gray-900">EVER</span>
+          <span className="text-pink-500 text-2xl">.</span>
+        </Link>
       </div>
 
-      <nav className="mt-2">
-        <ul className="flex space-x-4">
-          <li>
-            <Link to="/" className="text-gray-700 hover:text-blue-600">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/collection"
-              className="text-gray-700 hover:text-blue-600"
-            >
-              Collection
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="text-gray-700 hover:text-blue-600">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="text-gray-700 hover:text-blue-600">
-              Contact
-            </Link>
-          </li>
+      {/* Navigation menu */}
+      <nav>
+        <ul className="flex space-x-8 text-sm font-semibold tracking-wide">
+          {navItems.map((item) => (
+            <li key={item.path} className="relative">
+              <Link
+                to={item.path}
+                className={`${location.pathname === item.path
+                    ? "text-gray-900 underline underline-offset-4"
+                    : "text-gray-700 hover:text-gray-900 hover:underline underline-offset-4"
+                  }`}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
         </ul>
-
       </nav>
 
-      <div className="flex items-center space-x-4">
-        <SearchOutlined className="text-xl text-gray-700 cursor-pointer hover:text-blue-600" />
-        <Dropdown menu={{ items, onClick: handleMenuClick }} trigger={['click']}>
-          <UserOutlined
-            className="text-xl text-gray-700 cursor-pointer hover:text-blue-600"
-            onClick={handleButtonClick}
-          />
+      {/* Icons */}
+      <div className="flex items-center space-x-6">
+        <SearchOutlined className="text-lg text-gray-700 hover:text-black cursor-pointer" />
+
+        <Dropdown menu={{ items, onClick: handleMenuClick }} trigger={["click"]}>
+          <UserOutlined className="text-lg text-gray-700 hover:text-black cursor-pointer" />
         </Dropdown>
 
-        <ShoppingCartOutlined className="text-xl text-gray-700 cursor-pointer hover:text-blue-600" />
+        <Badge count={0} size="small" offset={[-2, 5]}>
+          <ShoppingCartOutlined className="text-lg text-gray-700 hover:text-black cursor-pointer" />
+        </Badge>
       </div>
     </header>
   );

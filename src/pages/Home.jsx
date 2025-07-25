@@ -42,8 +42,8 @@ const Home = () => {
         <span className="hidden sm:block flex-1 border-t border-gray-400 ml-4"></span>
       </div>
 
-      <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit...
+      <p className="text-center text-base text-gray-600 max-w-3xl mx-auto">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum non, beatae, ipsam fugiat ut aliquam doloribus laudantium ducimus voluptates doloremque qui nulla, facilis quia velit ipsum minus omnis laborum quasi.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-18">

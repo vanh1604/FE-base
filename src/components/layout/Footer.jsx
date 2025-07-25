@@ -2,49 +2,43 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8 px-4 mt-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-white text-gray-800 px-6 pt-14 pb-6 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* Cột logo + mô tả */}
         <div>
-          <h2 className="text-2xl font-bold text-blue-500">ForeverShop</h2>
-          <p className="mt-2 text-sm text-gray-300">
-            ForeverShop là nền tảng mua sắm trực tuyến đáng tin cậy, mang đến
-            sản phẩm chất lượng cao và dịch vụ tận tâm.
+          <h1 className="text-3xl font-bold text-black">
+            FOREVER
+            <span className="text-pink-400 ml-1">.</span>
+          </h1>
+          <p className="mt-4 text-sm leading-relaxed text-gray-600">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br />
+            Lorem Ipsum has been the industry's standard dummy text ever since the <br /> 
+            1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
           </p>
         </div>
 
-        <div>
-          <h3 className="text-lg font-semibold mb-2">Danh mục</h3>
-          <ul className="space-y-2 text-sm text-gray-300">
-            <li>
-              <a href="/" className="hover:text-blue-400">
-                Trang chủ
-              </a>
-            </li>
-            <li>
-              <a href="/products" className="hover:text-blue-400">
-                Sản phẩm
-              </a>
-            </li>
-            <li>
-              <a href="/contact" className="hover:text-blue-400">
-                Liên hệ
-              </a>
-            </li>
+
+        <div className="space-y-4 gap-4 ml-60">
+          <h3 className="text-lg font-bold mb-4">COMPANY</h3>
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li><a href="/" className="hover:underline">HOME</a></li>
+            <li><a href="/about" className="hover:underline">ABOUT US</a></li>
+            <li><a href="/delivery" className="hover:underline">DELIVERY</a></li>
+            <li><a href="/privacy" className="hover:underline">PRIVACY POLICY</a></li>
           </ul>
         </div>
 
-        <div>
-          <h3 className="text-lg font-semibold mb-2">Liên hệ</h3>
-          <ul className="space-y-2 text-sm text-gray-300">
-            <li>Địa chỉ: 123 Đường ABC, Hà Nội</li>
-            <li>Điện thoại: 0123 456 789</li>
-            <li>Email: support@forevershop.vn</li>
+        <div className="space-y-5 ml-60">
+          <h3 className="text-lg font-bold mb-4">GET IN TOUCH</h3>
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li>+84 123 456 789</li>
+            <li>contact@forever.com</li>
           </ul>
         </div>
       </div>
 
-      <div className="mt-8 text-center text-xs text-gray-500 border-t border-gray-700 pt-4">
-        © 2025 ForeverShop. All rights reserved.
+      <div className="mt-10 border-t border-gray-200 pt-4 text-right text-sm text-gray-600 max-w-7xl mx-auto">
+        Copy right 2024© forever.com – All rights reserved
       </div>
     </footer>
   );

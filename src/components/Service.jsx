@@ -1,106 +1,43 @@
+import { Button, Input } from "antd";
 import React from "react";
+import {
+  CheckCircleIcon,
+  LockClosedIcon,
+  ArrowPathIcon,
+} from "@heroicons/react/24/outline";
 
 const Service = () => {
   return (
     <div>
       <div className="max-w-5xl mx-auto py-16">
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
+          {/* 1 - Easy Exchange */}
           <div className="flex flex-col items-center text-center flex-1">
-            <svg
-              className="w-14 h-14 mb-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="black"
-                strokeWidth="2"
-                fill="none"
-              />
-              <path
-                d="M8 12l2.5 2.5L16 9"
-                stroke="black"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <ArrowPathIcon className="w-14 h-14 text-black mb-4" />
             <h3 className="font-bold text-lg mb-1">Easy Exchange Policy</h3>
             <p className="text-gray-400">
               We offer hassle free exchange policy
             </p>
           </div>
 
+          {/* 2 - 7 Days Return */}
           <div className="flex flex-col items-center text-center flex-1">
-            <svg
-              className="w-14 h-14 mb-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="black"
-                strokeWidth="2"
-                fill="none"
-              />
-              <path
-                d="M8 12l2.5 2.5L16 9"
-                stroke="black"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <CheckCircleIcon className="w-14 h-14 text-black mb-4" />
             <h3 className="font-bold text-lg mb-1">7 Days Return Policy</h3>
             <p className="text-gray-400">
               We provide 7 days free return policy
             </p>
           </div>
 
+          {/* 3 - Best Support */}
           <div className="flex flex-col items-center text-center flex-1">
-            <svg
-              className="w-14 h-14 mb-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="black"
-                strokeWidth="2"
-                fill="none"
-              />
-              <rect
-                x="8"
-                y="10"
-                width="8"
-                height="6"
-                rx="2"
-                stroke="black"
-                strokeWidth="2"
-              />
-              <path
-                d="M9 10V8a3 3 0 0 1 6 0v2"
-                stroke="black"
-                strokeWidth="2"
-              />
-            </svg>
+            <LockClosedIcon className="w-14 h-14 text-black mb-4" />
             <h3 className="font-bold text-lg mb-1">Best customer support</h3>
             <p className="text-gray-400">We provide 24/7 customer support</p>
           </div>
         </div>
 
+        {/* Subscribe */}
         <div className="text-center mt-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-2">
             Subscribe now &amp; get 20% off
@@ -110,17 +47,17 @@ const Service = () => {
             industry.
           </p>
           <form className="flex max-w-2xl mx-auto">
-            <input
+            <Input
               type="email"
               placeholder="Enter your email"
               className="flex-1 px-6 py-4 border border-gray-200 rounded-l-md focus:outline-none text-lg"
             />
-            <button
+            <Button
               type="submit"
-              className="bg-black text-white px-10 py-4 rounded-r-md font-semibold text-lg hover:bg-gray-800 transition"
+              className="bg-black! text-white! px-6! py-4! rounded-r-md! hover:bg-gray-800! transition duration-300!"
             >
               SUBSCRIBE
-            </button>
+            </Button>
           </form>
         </div>
       </div>
