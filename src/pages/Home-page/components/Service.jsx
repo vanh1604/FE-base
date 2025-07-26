@@ -1,10 +1,9 @@
 import { Button, Form, Input } from "antd";
-import React from "react";
 import {
-  CheckCircleIcon,
-  LockClosedIcon,
-  ArrowPathIcon,
-} from "@heroicons/react/24/outline";
+  SyncOutlined,
+  CheckCircleOutlined,
+  LockOutlined,
+} from "@ant-design/icons";
 
 const Service = () => {
   return (
@@ -13,7 +12,7 @@ const Service = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
           {/* 1 - Easy Exchange */}
           <div className="flex flex-col items-center text-center flex-1">
-            <ArrowPathIcon className="w-14 h-14 text-black mb-4" />
+            <SyncOutlined style={{ fontSize: "3.5rem", marginBottom: "1rem", color: "black" }} />
             <h3 className="font-bold text-lg mb-1">Easy Exchange Policy</h3>
             <p className="text-gray-400">
               We offer hassle free exchange policy
@@ -22,7 +21,7 @@ const Service = () => {
 
           {/* 2 - 7 Days Return */}
           <div className="flex flex-col items-center text-center flex-1">
-            <CheckCircleIcon className="w-14 h-14 text-black mb-4" />
+            <CheckCircleOutlined className="w-14 h-14 text-black mb-4" />
             <h3 className="font-bold text-lg mb-1">7 Days Return Policy</h3>
             <p className="text-gray-400">
               We provide 7 days free return policy
@@ -31,7 +30,7 @@ const Service = () => {
 
           {/* 3 - Best Support */}
           <div className="flex flex-col items-center text-center flex-1">
-            <LockClosedIcon className="w-14 h-14 text-black mb-4" />
+            <LockOutlined className="w-14 h-14 text-black mb-4" />
             <h3 className="font-bold text-lg mb-1">Best customer support</h3>
             <p className="text-gray-400">We provide 24/7 customer support</p>
           </div>

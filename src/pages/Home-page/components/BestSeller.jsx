@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ProductItem from "./ProductItem";
+import ProductItem from "../../../components/ProductItem";
 import axios from "axios";
 
 const BestSeller = () => {
@@ -11,7 +11,7 @@ const BestSeller = () => {
         const res = await axios.get("https://687ecf16efe65e520087a4c2.mockapi.io/product");
         const allProducts = res.data;
 
-        // Trộn ngẫu nhiên mảng và lấy 5 phần tử đầu tiên
+
         const shuffled = allProducts.sort(() => 0.5 - Math.random());
         const selected = shuffled.slice(0, 5);
 

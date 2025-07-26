@@ -1,5 +1,4 @@
 import { Image } from "antd";
-import React from "react";
 
 const ProductItem = ({ item }) => {
     if (!item) return null;
@@ -9,7 +8,7 @@ const ProductItem = ({ item }) => {
             className="border p-2 rounded-lg shadow-sm hover:shadow-md transition flex flex-col items-center bg-white"
         >
             <Image
-                src={item.image}
+                src={item.avatar}
                 alt={item.title}
                 className="object-cover mb-4 rounded w-full! h-50!"
 

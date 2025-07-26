@@ -1,5 +1,4 @@
 import { Button, Image } from "antd";
-import React from "react";
 
 const FashionBanner = () => {
   return (

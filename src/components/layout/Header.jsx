@@ -45,25 +45,25 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white text-black px-10 py-4 shadow-sm flex justify-between items-center sticky top-0 z-50">
+    <header className="bg-white text-black px-app py-4 shadow-sm flex justify-between items-center sticky top-0 z-50 ">
       {/* Logo */}
-      <div className="text-3xl font-extrabold tracking-widest text-gray-900">
+      <div className="text-3xl font-extrabold tracking-widest text-gray-900 ml-25">
         <Link to="/" className="flex items-center gap-1">
           FOR<span className="text-gray-900">EVER</span>
           <span className="text-pink-500 text-2xl">.</span>
         </Link>
       </div>
 
-      {/* Navigation menu */}
+
       <nav>
-        <ul className="flex space-x-8 text-sm font-semibold tracking-wide">
+        <ul className="flex space-x-8 text-sm font-semibold tracking-wide mr-20">
           {navItems.map((item) => (
             <li key={item.path} className="relative">
               <Link
                 to={item.path}
                 className={`${location.pathname === item.path
-                    ? "text-gray-900 underline underline-offset-4"
-                    : "text-gray-700 hover:text-gray-900 hover:underline underline-offset-4"
+                  ? "text-gray-900 underline underline-offset-4"
+                  : "text-gray-700 hover:text-gray-900 hover:underline underline-offset-4"
                   }`}
               >
                 {item.label}

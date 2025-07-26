@@ -41,13 +41,11 @@ const Collection = () => {
   const filteredProducts = useMemo(() => {
     let result = [...products];
 
-    // Filter by category
     if (selectedCategories.length > 0) {
       result = result.filter((item) =>
         selectedCategories.includes(item.category)
       );
     }
-
 
     if (minPrice !== "") {
       result = result.filter((item) => item.price >= parseFloat(minPrice));
@@ -66,17 +64,16 @@ const Collection = () => {
   }, [products, selectedCategories, minPrice, maxPrice, sortOption]);
 
   return (
-    <div className="px-6 py-8">
+    <div className="px-app py-8">
       <div className="flex flex-col md:flex-row items-center justify-between my-8">
-        <h2 className="text-3xl md:text-4xl font-light text-gray-600 mb-4 md:mb-0">
+        <h2 className="text-3xl md:text-4xl font-light text-gray-600 mb-4 md:mb-0 px-22">
           ALL
           <span className="font-bold text-gray-800 ml-2">COLLECTIONS</span>
           <span className="inline-block w-16 h-[2px] bg-gray-700 ml-3 align-middle"></span>
         </h2>
 
-
         <select
-          className="border px-3 py-1 rounded text-sm"
+          className="border py-1 rounded text-sm"
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
         >
@@ -86,8 +83,7 @@ const Collection = () => {
         </select>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-8">
-
+      <div className="flex flex-col md:flex-row gap-8 px-20">
         <aside className="md:w-1/4 w-full border rounded-lg p-5 shadow-sm bg-white sticky top-20 h-fit">
           <div className="mb-6">
             <h2 className="font-semibold text-lg mb-3">CATEGORIES</h2>
@@ -131,7 +127,6 @@ const Collection = () => {
             </div>
           </div>
         </aside>
-
 
         <main className="md:w-3/4 w-full">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-6">

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import FashionBanner from "../components/FashionBanner";
-import BestSeller from "../components/BestSeller";
-import Service from "../components/Service";
+import FashionBanner from "./components/FashionBanner";
+import BestSeller from "./components/BestSeller";
+import Service from "./components/Service";
 import axios from "axios";
+import { Image } from "antd";
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
@@ -52,7 +53,7 @@ const Home = () => {
             key={item.id}
             className="border p-20 rounded-lg shadow-sm hover:shadow-md transition flex flex-col items-center bg-white min-h-[240px] max-w-[450px]"
           >
-            <img
+            <Image
               src={item.image}
               alt={item.title}
               className="w-full h-48 object-cover mb-4 rounded max-w-[200px] min-h-[192px]"
