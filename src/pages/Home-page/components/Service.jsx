@@ -12,9 +12,9 @@ const Service = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
           {/* 1 - Easy Exchange */}
           <div className="flex flex-col items-center text-center flex-1">
-            <SyncOutlined style={{ fontSize: "3.5rem", marginBottom: "1rem", color: "black" }} />
-            <h3 className="font-bold text-lg mb-1">Easy Exchange Policy</h3>
-            <p className="text-gray-400">
+            <SyncOutlined className="w-14 h-14 text-black mb-4" />
+            <h3 className="font-bold text-lg mb-1 mr-10">Easy Exchange Policy</h3>
+            <p className="text-gray-400 mr-10">
               We offer hassle free exchange policy
             </p>
           </div>
@@ -22,8 +22,8 @@ const Service = () => {
           {/* 2 - 7 Days Return */}
           <div className="flex flex-col items-center text-center flex-1">
             <CheckCircleOutlined className="w-14 h-14 text-black mb-4" />
-            <h3 className="font-bold text-lg mb-1">7 Days Return Policy</h3>
-            <p className="text-gray-400">
+            <h3 className="font-bold text-lg mb-1 mr-10">7 Days Return Policy</h3>
+            <p className="text-gray-400 mr-10">
               We provide 7 days free return policy
             </p>
           </div>
@@ -31,8 +31,8 @@ const Service = () => {
           {/* 3 - Best Support */}
           <div className="flex flex-col items-center text-center flex-1">
             <LockOutlined className="w-14 h-14 text-black mb-4" />
-            <h3 className="font-bold text-lg mb-1">Best customer support</h3>
-            <p className="text-gray-400">We provide 24/7 customer support</p>
+            <h3 className="font-bold text-lg mb-1 mr-10">Best customer support</h3>
+            <p className="text-gray-400 mr-10">We provide 24/7 customer support</p>
           </div>
         </div>
 

@@ -6,7 +6,7 @@ const Cart = () => {
         <div className="py-8 px-app">
             <div className="mt-8 text-4xl font-semibold tracking-wide text-gray-800 ml-24">
                 YOUR CART
-                <span className="inline-block w-16 h-[2px] bg-gray-700 ml-3 align-middle"></span>
+                <span className="inline-block w-16 h-0.5 bg-gray-700 ml-3 align-middle"></span>
             </div>
 
             <div className="flex flex-col items-center justify-center my-8">
@@ -22,8 +22,8 @@ const Cart = () => {
                     <CartItem />
                 </div>
 
-                <div className="w-full lg:w-[350px]">
-                    <div className="mr-20 p-8 sticky top-10 w-100">
+                <div className="w-full ">
+                    <div className="ml-230 p-8 sticky w-100">
                         <h2 className="text-2xl font-bold text-gray-700 mb-6 text-center">
                             CART TOTAL
                         </h2>
@@ -42,7 +42,7 @@ const Cart = () => {
                         </div>
 
                         <Button
-                            className="w-full !bg-black !text-white !py-3 !mt-6 !rounded hover:!bg-gray-800 transition-colors duration-200"
+                            className=" !bg-black !text-white !py-3 !mt-6 !rounded hover:!bg-gray-800 transition-colors duration-200 ml-35"
                             size="large"
                         >
                             PROCEED TO CHECKOUT

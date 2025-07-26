@@ -5,7 +5,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Badge, Dropdown, message } from "antd";
-
+import clsx from "clsx";
 export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -61,10 +61,12 @@ export default function Header() {
             <li key={item.path} className="relative">
               <Link
                 to={item.path}
-                className={`${location.pathname === item.path
-                  ? "text-gray-900 underline underline-offset-4"
-                  : "text-gray-700 hover:text-gray-900 hover:underline underline-offset-4"
-                  }`}
+                className={clsx(
+                  "underline-offset-4",
+                  location.pathname === item.path
+                    ? "text-gray-900 underline"
+                    : "text-gray-700 hover:text-gray-900 hover:underline"
+                )}
               >
                 {item.label}
               </Link>
