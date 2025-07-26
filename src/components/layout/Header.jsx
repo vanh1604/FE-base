@@ -82,7 +82,9 @@ export default function Header() {
         </Dropdown>
 
         <Badge count={0} size="small" offset={[-2, 5]}>
-          <ShoppingCartOutlined className="text-lg text-gray-700 hover:text-black cursor-pointer" />
+          <Link to="/cart" className="!text-gray-700 hover:!text-black">
+            <ShoppingCartOutlined className="text-lg cursor-pointer" />
+          </Link>
         </Badge>
       </div>
     </header>

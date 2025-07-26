@@ -1,0 +1,7 @@
+
+
+const Checkout = () =>{
+        <div>
+            
+        </div>
+}

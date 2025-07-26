@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Signup from "./pages/SignUp";
 import Login from "./pages/Login";
+import Cart from "./pages/Cart-Item/Cart";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="collection" element={<Collection />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<h1>Page Not Found</h1>} />
+          <Route path="cart" element={<Cart />} />
         </Route>
       </Routes>
     </BrowserRouter>
