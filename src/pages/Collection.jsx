@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import ProductItem from "../components/ProductItem";
 import axios from "axios";
 import { Checkbox, Input } from "antd";
+import { Link } from "react-router-dom";
 
 const Collection = () => {
   const [products, setProducts] = useState([]);
@@ -131,12 +132,14 @@ const Collection = () => {
         <main className="md:w-3/4 w-full">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-6">
             {filteredProducts.map((item) => (
-              <ProductItem key={item.id} item={item} />
+              <Link key={item.id} to={`/product/${item.id}`}>
+                <ProductItem item={item} />
+              </Link>
             ))}
           </div>
         </main>
       </div>
-    </div>
+    </div >
   );
 };
 
