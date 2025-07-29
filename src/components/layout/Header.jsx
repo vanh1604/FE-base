@@ -4,7 +4,7 @@ import {
   SearchOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Badge, Dropdown, message } from "antd";
+import { Badge, Dropdown, Menu, message } from "antd";
 import clsx from "clsx";
 export default function Header() {
   const navigate = useNavigate();
@@ -45,38 +45,32 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white text-black px-app py-4 shadow-sm flex justify-between items-center sticky top-0 z-50 ">
-      {/* Logo */}
-      <div className="text-3xl font-extrabold tracking-widest text-gray-900 ml-25">
+    <header className=" text-black px-app py-4 flex items-center justify-between top-0 ml-25 mr-25">
+
+      <div className="text-3xl font-extrabold tracking-widest text-gray-900 ml-4">
         <Link to="/" className="flex items-center gap-1">
           FOR<span className="text-gray-900">EVER</span>
           <span className="text-pink-500 text-2xl">.</span>
         </Link>
       </div>
 
-
-      <nav>
-        <ul className="flex space-x-8 text-sm font-semibold tracking-wide mr-20">
+      {/* Menu giữa logo và icon */}
+      <div className="flex-1 flex justify-center">
+        <Menu
+          mode="horizontal"
+          selectedKeys={[location.pathname]}
+          className="!border-none !font-semibold !text-sm !flex !gap-6 !justify-center"
+        >
           {navItems.map((item) => (
-            <li key={item.path} className="relative">
-              <Link
-                to={item.path}
-                className={clsx(
-                  "underline-offset-4",
-                  location.pathname === item.path
-                    ? "text-gray-900 underline"
-                    : "text-gray-700 hover:text-gray-900 hover:underline"
-                )}
-              >
-                {item.label}
-              </Link>
-            </li>
+            <Menu.Item key={item.path} className="!px-4">
+              <Link to={item.path}>{item.label}</Link>
+            </Menu.Item>
           ))}
-        </ul>
-      </nav>
+        </Menu>
+      </div>
 
       {/* Icons */}
-      <div className="flex items-center space-x-6">
+      <div className="flex items-center space-x-6 mr-4">
         <SearchOutlined className="text-lg text-gray-700 hover:text-black cursor-pointer" />
 
         <Dropdown menu={{ items, onClick: handleMenuClick }} trigger={["click"]}>
@@ -90,5 +84,6 @@ export default function Header() {
         </Badge>
       </div>
     </header>
+
   );
 }

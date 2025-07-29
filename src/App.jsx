@@ -8,6 +8,8 @@ import Contact from "./pages/Contact";
 import Signup from "./pages/SignUp";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart-Item/Cart";
+import ProductDetail from "./pages/ProductDetaild";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<h1>Page Not Found</h1>} />
           <Route path="cart" element={<Cart />} />
+          <Route path="product/:id" element={<ProductDetail />} />
+          <Route path="checkout" element={<Checkout />} />
         </Route>
       </Routes>
     </BrowserRouter>

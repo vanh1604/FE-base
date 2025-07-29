@@ -1,27 +1,28 @@
 import { Image } from "antd";
+import { Button } from "antd/es/radio";
 
 const ProductItem = ({ item }) => {
     if (!item) return null;
 
     return (
-        <div
-            className="border p-2 rounded-lg shadow-sm hover:shadow-md transition flex flex-col items-center bg-white"
-        >
+        <div className="group relative p-4 border rounded-lg shadow hover:shadow-lg">
             <Image
                 src={item.avatar}
-                alt={item.title}
-                className="object-cover mb-4 rounded w-full! h-50!"
-
+                alt={item.name}
+                className="!w-full !h-[220px] !object-cover !rounded-md"
             />
-            <h3 className="text-lg font-semibold text-center mb-2 line-clamp-2">
-                {item.title}
-            </h3>
-            <p className="text-gray-600">${item.price}</p>
-            <button
-                className="w-full bg-black text-white py-2 rounded mt-2 hover:bg-gray-800 transition-colors"
+            <h3 className="text-lg font-semibold mt-2">{item.name}</h3>
+            <p className="text-gray-500">${item.price}</p>
+
+            <Button
+                className="!w-full !py-2 !px-4 !mt-2 !text-white !bg-black !text-center
+                !mb-1 !text-sm !font-semibold 
+             !hover:bg-gray-800 !hover:scale-105 
+             transition-all !duration-300 !shadow-sm 
+             !active:scale-100"
             >
                 Add to cart
-            </button>
+            </Button>
         </div>
     );
 };

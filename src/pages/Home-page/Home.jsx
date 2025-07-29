@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-7xl mx-auto px-5 py-8">
+      <div className="w-full max-w-7xl mx-auto px-app py-8">
         <FashionBanner />
       </div>
 
