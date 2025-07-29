@@ -6,10 +6,10 @@ const ProductItem = ({ item }) => {
 
     return (
         <div className="group relative p-4 border rounded-lg shadow hover:shadow-lg">
-            <img
+            <Image
                 src={item.avatar}
                 alt={item.name}
-                className="w-full h-48 object-cover rounded"
+                className="!w-full !h-[220px] !object-cover !rounded-md"
             />
             <h3 className="text-lg font-semibold mt-2">{item.name}</h3>
             <p className="text-gray-500">${item.price}</p>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import ProductItem from "../components/ProductItem";
 import axios from "axios";
-import { Checkbox, Input } from "antd";
+import { Checkbox, Input, Select } from "antd";
 import { Link } from "react-router-dom";
 
 const Collection = () => {
@@ -10,7 +10,7 @@ const Collection = () => {
   const [sortOption, setSortOption] = useState("relevance");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-
+  const { Option } = Select;
   // Fetch data
   useEffect(() => {
     const fetchProducts = async () => {
@@ -73,19 +73,19 @@ const Collection = () => {
           <span className="inline-block w-16 h-[2px] bg-gray-700 ml-3 align-middle"></span>
         </h2>
 
-        <select
-          className="border py-1 rounded text-sm"
+        <Select
+          className="!border !py-1 !rounded !text-sm"
           value={sortOption}
-          onChange={(e) => setSortOption(e.target.value)}
+          onChange={(value) => setSortOption(value)} // Không dùng e.target.value
         >
-          <option value="relevance">Sort by: Relevance</option>
-          <option value="priceLow">Price: Low to High</option>
-          <option value="priceHigh">Price: High to Low</option>
-        </select>
+          <Option value="relevance">Sort by: Relevance</Option>
+          <Option value="priceLow">Price: Low to High</Option>
+          <Option value="priceHigh">Price: High to Low</Option>
+        </Select>
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 px-20">
-        <aside className="md:w-1/4 w-full border rounded-lg p-5 shadow-sm bg-white sticky top-20 h-fit">
+        <aside className="md:w-1/4 w-full border rounded-lg p-5 shadow-sm bg-white top-20 h-fit">
           <div className="mb-6">
             <h2 className="font-semibold text-lg mb-3">CATEGORIES</h2>
             <div className="space-y-2">

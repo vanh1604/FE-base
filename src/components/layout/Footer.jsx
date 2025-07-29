@@ -1,4 +1,4 @@
-import { Menu } from "antd";
+import { Menu, Select } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -33,8 +33,22 @@ const Footer = () => {
         <div className="space-y-5 ml-60">
           <h3 className="text-lg font-bold mb-4">GET IN TOUCH</h3>
           <ul className="space-y-2 text-sm text-gray-700">
-            <li>+84 123 456 789</li>
-            <li><Link>leh19923@gmail.com</Link></li>
+            <li>
+              <a
+                href="tel:+84123456789"
+                className="hover:underline text-blue-600 text-gray-700"
+              >
+                +84 123 456 789
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:leh19923@gmail.com"
+                className="hover:underline text-gray-700"
+              >
+                leh19923@gmail.com
+              </a>
+            </li>
           </ul>
         </div>
       </div>

@@ -21,8 +21,7 @@ const Login = () => {
     return (
         <div className="flex justify-center items-center min-h-screen bg-white">
             <div className="w-full max-w-md px-6 py-10">
-
-                <h2 className="text-4xl font-serif font-bold text-center mb-10 flex items-center justify-center gap-2">
+                <h2 className="text-4xl font-time text-center mb-10 flex items-center justify-center gap-2">
                     <span>Login</span>
                     <span className="text-3xl">—</span>
                 </h2>

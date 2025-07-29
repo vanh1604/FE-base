@@ -1,6 +1,6 @@
 import { Button } from "antd";
 import CartItem from "../Cart-Item/components/CartItem";
-
+import { Link } from "react-router-dom";
 const Cart = () => {
     return (
         <div className="py-8 px-app">
@@ -25,28 +25,31 @@ const Cart = () => {
                 <div className="w-full ">
                     <div className="ml-230 p-8 sticky w-100">
                         <h2 className="text-2xl font-bold text-gray-700 mb-6 text-center">
-                            CART TOTAL
+                            CARTTOTAL
+                            <span className="inline-block w-16 h-0.5 bg-gray-700 mr-32 align-middle"></span>
                         </h2>
                         <div className="border-t border-gray-200 mb-4"></div>
 
-                        <div className="space-y-4 text-gray-700">
-                            <p className="flex justify-between border-b pb-2">
+                        <div className="space-y-5 text-gray-700">
+                            <p className="flex justify-between border-b pb-3 ">
                                 <span>Subtotal:</span> <span>$0.00</span>
                             </p>
-                            <p className="flex justify-between border-b pb-2">
+                            <p className="flex justify-between border-b pb-3">
                                 <span>Shipping Fee:</span> <span>$10.00</span>
                             </p>
-                            <p className="flex justify-between font-bold text-lg pb-2">
+                            <p className="flex justify-between font-bold text-lg pb-3">
                                 <span>Total:</span> <span>$0.00</span>
                             </p>
                         </div>
 
-                        <Button
-                            className=" !bg-black !text-white !py-3 !mt-6 !rounded hover:!bg-gray-800 transition-colors duration-200 ml-35"
-                            size="large"
-                        >
-                            PROCEED TO CHECKOUT
-                        </Button>
+                        <Link to="/Checkout">
+                            <Button
+                                className=" !bg-black !text-white !py-3 !mt-6 !rounded hover:!bg-gray-800 transition-colors duration-200 ml-35"
+                                size="large"
+                            >
+                                PROCEED TO CHECKOUT
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>
