@@ -6,6 +6,7 @@ import {
 } from "@ant-design/icons";
 import { Badge, Dropdown, message } from "antd";
 import clsx from "clsx";
+
 export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -45,49 +46,53 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white text-black px-app py-4 shadow-sm flex justify-between items-center sticky top-0 z-50 ">
-      {/* Logo */}
-      <div className="text-3xl font-extrabold tracking-widest text-gray-900 ml-25">
-        <Link to="/" className="flex items-center gap-1">
-          FOR<span className="text-gray-900">EVER</span>
-          <span className="text-pink-500 text-2xl">.</span>
-        </Link>
-      </div>
-
-
-      <nav>
-        <ul className="flex space-x-8 text-sm font-semibold tracking-wide mr-20">
-          {navItems.map((item) => (
-            <li key={item.path} className="relative">
-              <Link
-                to={item.path}
-                className={clsx(
-                  "underline-offset-4",
-                  location.pathname === item.path
-                    ? "text-gray-900 underline"
-                    : "text-gray-700 hover:text-gray-900 hover:underline"
-                )}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      {/* Icons */}
-      <div className="flex items-center space-x-6">
-        <SearchOutlined className="text-lg text-gray-700 hover:text-black cursor-pointer" />
-
-        <Dropdown menu={{ items, onClick: handleMenuClick }} trigger={["click"]}>
-          <UserOutlined className="text-lg text-gray-700 hover:text-black cursor-pointer" />
-        </Dropdown>
-
-        <Badge count={0} size="small" offset={[-2, 5]}>
-          <Link to="/cart" className="!text-gray-700 hover:!text-black">
-            <ShoppingCartOutlined className="text-lg cursor-pointer" />
+    <header className="">
+      <div className="max-w-425 mx-auto flex items-center justify-between h-20 px-app">
+        {/* Logo */}
+        <div className="flex-1 flex items-center">
+          <Link
+            to="/"
+            className="text-4xl font-extrabold tracking-widest text-gray-900 flex items-center gap-1"
+          >
+            FOR<span className="text-gray-900">EVER</span>
+            <span className="text-pink-500 text-3xl">.</span>
           </Link>
-        </Badge>
+        </div>
+        {/* Menu */}
+        <nav className="flex-1 flex justify-center">
+          <ul className="flex space-x-10 text-base font-semibold tracking-wide">
+            {navItems.map((item) => (
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  className={clsx(
+                    "transition-colors duration-200",
+                    location.pathname === item.path
+                      ? "text-black underline underline-offset-8"
+                      : "text-gray-700 hover:text-black"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        {/* Icons */}
+        <div className="flex-1 flex justify-end items-center space-x-6">
+          <SearchOutlined className="text-xl text-gray-700 hover:text-black cursor-pointer" />
+          <Dropdown
+            menu={{ items, onClick: handleMenuClick }}
+            trigger={["click"]}
+          >
+            <UserOutlined className="text-xl text-gray-700 hover:text-black cursor-pointer" />
+          </Dropdown>
+          <Badge count={0} size="small" offset={[-2, 5]}>
+            <Link to="/cart" className="!text-gray-700 hover:!text-black">
+              <ShoppingCartOutlined className="text-xl cursor-pointer" />
+            </Link>
+          </Badge>
+        </div>
       </div>
     </header>
   );
