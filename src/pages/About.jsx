@@ -36,10 +36,10 @@ const About = () => {
         ABOUT US
         <span className="inline-block w-16 h-[2px] bg-gray-700 ml-3 align-middle"></span>
       </div>
-      <div className="flex flex-col lg:flex-row items-center justify-center my-8 gap-6">
+      <div className="flex flex-col lg:flex-row items-center my-8  ">
         <div className="w-full lg:w-1/2">
           <Image
-            className="rounded-xl w-full max-w-xl h-auto object-contain mx-auto px-app ml-10"
+            className="rounded-xl w-full max-w-xl h-auto object-contain mx-auto px-app ml-60 "
             src="https://forever-frontend-pink.vercel.app/assets/about_img-BAJyTXw9.png"
           />
         </div>
