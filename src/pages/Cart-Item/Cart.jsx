@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   return (
     <div className="py-8 px-app">
-      <div className="mt-8 text-4xl font-semibold tracking-wide text-gray-800 ml-24">
+      <div className="mt-8 text-xl font-semibold tracking-wide text-gray-800 ml-24">
         YOUR CART
         <span className="inline-block w-16 h-0.5 bg-gray-700 ml-3 align-middle"></span>
       </div>
@@ -23,7 +23,7 @@ const Cart = () => {
         </div>
 
         <div className="w-full ">
-          <div className="ml-230 p-8 sticky w-100">
+          <div className="ml-330 p-8 sticky w-100 ">
             <h2 className="text-2xl font-bold text-gray-700 mb-6 text-center">
               CARTTOTAL
               <span className="inline-block w-16 h-0.5 bg-gray-700 mr-32 align-middle"></span>

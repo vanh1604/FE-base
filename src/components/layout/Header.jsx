@@ -46,8 +46,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="">
-      <div className="max-w-425 mx-auto flex items-center justify-between h-20 px-app">
+    <header className="sticky top-0 z-50 bg-white shadow">
+      <div className="max-w-405 mx-auto flex items-center justify-between h-20 px-app">
         {/* Logo */}
         <div className="flex-1 flex items-center">
           <Link
@@ -59,7 +59,7 @@ export default function Header() {
           </Link>
         </div>
         {/* Menu */}
-        <nav className="flex-1 flex justify-center">
+        <nav className="flex-1 flex justify-center sticky">
           <ul className="flex space-x-10 text-base font-semibold tracking-wide">
             {navItems.map((item) => (
               <li key={item.path}>

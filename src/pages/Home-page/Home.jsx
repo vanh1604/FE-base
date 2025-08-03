@@ -29,12 +29,10 @@ const Home = () => {
   );
 
   return (
-    <div className="bg-gray-100">
-      {/* Banner */}
+    <div className="bg-white">
       <FashionBanner />
 
-      {/* Latest Collection */}
-      <section className="max-w-7xl mx-auto px-app py-16">
+      <section className="max-w-405 mx-auto px-app py-16">
         <div className="flex items-center justify-center mb-10">
           <span className="hidden sm:block flex-1 border-t border-gray-400 mr-4"></span>
           <h2 className="text-3xl md:text-4xl font-light text-gray-500 text-center">
@@ -56,24 +54,30 @@ const Home = () => {
           {filteredProducts.slice(0, 10).map((item) => (
             <div
               key={item.id}
-              className="border p-6 rounded-lg shadow-sm hover:shadow-md transition flex flex-col items-center bg-white min-h-[240px] max-w-[250px] mx-auto"
+              className="bg-white rounded-lg shadow-sm hover:shadow-md transition duration-300 overflow-hidden"
             >
-              <Image
-                src={item.image}
-                alt={item.title}
-                className="w-full h-48 object-cover mb-4 rounded max-w-[200px] min-h-[192px]"
-              />
-              <h3 className="text-lg font-semibold text-center mb-2 line-clamp-2 min-h-[3em] max-h-[3em]">
-                {item.title}
-              </h3>
-              <p className="text-gray-600">${item.price}</p>
+              <div className="aspect-square overflow-hidden">
+                <Image
+                  src={item.avatar}
+                  alt={item.title}
+                  className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                  preview={false}
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-sm font-medium text-gray-900 mb-2 line-clamp-2">
+                  {item.title}
+                </h3>
+                <p className="text-lg font-semibold text-gray-900">
+                  ${item.price}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* BestSeller & Service */}
-      <section className="max-w-7xl mx-auto px-app py-16">
+      <section className="max-w-410 mx-auto px-app py-16">
         <BestSeller />
         <Service />
       </section>

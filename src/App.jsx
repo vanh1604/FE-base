@@ -5,11 +5,11 @@ import Home from "./pages/Home-page/Home";
 import Collection from "./pages/Collection";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Signup from "./pages/SignUp";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart-Item/Cart";
 import ProductDetail from "./pages/ProductDetail";
 import Checkout from "./pages/Checkout";
+import Signup from "./pages/Signup";
 
 function App() {
   return (

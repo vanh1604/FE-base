@@ -5,7 +5,7 @@ const FashionBanner = () => {
     <div className="border-b border-gray-200">
       {" "}
       {/* Đổi border nhẹ hơn */}
-      <div className="max-w-400 mx-auto px-app flex flex-col md:flex-row items-center py-30 border border-gray-500 ">
+      <div className="max-w-380 mx-auto px-app flex flex-col md:flex-row items-center py-30 border border-gray-500">
         {/* Left Content */}
         <div className="flex-1 flex flex-col justify-center items-start">
           <div className="mb-4 text-gray-500 font-medium flex items-center gap-2">
