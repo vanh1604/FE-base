@@ -5,17 +5,18 @@ import Home from "./pages/Home-page/Home";
 import Collection from "./pages/Collection";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Signup from "./pages/SignUp";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart-Item/Cart";
+import ProductDetail from "./pages/ProductDetail";
+import Checkout from "./pages/Checkout";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-
         <Route path="/" element={<LayoutApp />}>
-          <Route path='login' element={<Login />} />
+          <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route index element={<Home />} />
           <Route path="collection" element={<Collection />} />
@@ -23,6 +24,8 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<h1>Page Not Found</h1>} />
           <Route path="cart" element={<Cart />} />
+          <Route path="product/:id" element={<ProductDetail />} />
+          <Route path="checkout" element={<Checkout />} />
         </Route>
       </Routes>
     </BrowserRouter>
