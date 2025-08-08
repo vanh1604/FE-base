@@ -64,14 +64,13 @@ const Collection = () => {
   }, [products, selectedCategories, minPrice, maxPrice, sortOption]);
 
   return (
-    <div className="px-app py-8">
-      <div className="flex flex-col md:flex-row items-center justify-between my-8">
-        <h2 className="text-3xl md:text-4xl font-light text-gray-600 mb-4 md:mb-0 px-22">
+    <div className="max-w-405 mx-auto px-app py-16">
+      <div className="flex flex-col md:flex-row items-center justify-between mb-10">
+        <h2 className="text-3xl md:text-4xl font-light text-gray-600 mb-4 md:mb-0">
           ALL
           <span className="font-bold text-gray-800 ml-2">COLLECTIONS</span>
           <span className="inline-block w-16 h-[2px] bg-gray-700 ml-3 align-middle"></span>
         </h2>
-
         <select
           className="border py-1 rounded text-sm"
           value={sortOption}
@@ -83,8 +82,8 @@ const Collection = () => {
         </select>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-8 px-20">
-        <aside className="md:w-1/4 w-full border rounded-lg p-5 shadow-sm bg-white sticky top-20 h-fit">
+      <div className="flex flex-col md:flex-row gap-8">
+        <aside className="md:w-1/4 w-full border rounded-lg p-5 shadow-sm bg-white top-20 h-fit">
           <div className="mb-6">
             <h2 className="font-semibold text-lg mb-3">CATEGORIES</h2>
             <div className="space-y-2">
