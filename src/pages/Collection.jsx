@@ -64,7 +64,7 @@ const Collection = () => {
   }, [products, selectedCategories, minPrice, maxPrice, sortOption]);
 
   return (
-    <div className="max-w-430 mx-auto px-app py-16">
+    <div className="max-w-405 mx-auto px-app py-16">
       <div className="flex flex-col md:flex-row items-center justify-between mb-10">
         <h2 className="text-3xl md:text-4xl font-light text-gray-600 mb-4 md:mb-0">
           ALL

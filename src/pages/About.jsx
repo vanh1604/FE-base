@@ -31,7 +31,7 @@ const About = () => {
   ];
 
   return (
-    <div className="max-w-400 mx-auto px-app py-16">
+    <div className="max-w-405 mx-auto px-app py-16">
       <div className="text-center mb-16">
         <h1 className="text-2xl font-semibold tracking-wide text-gray-800 mb-4">
           ABOUTUS
